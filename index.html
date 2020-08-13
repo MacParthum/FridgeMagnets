@@ -9,7 +9,7 @@
 <!-- CSS Styles (These styles are provided to you. Don't touch these!) -->
 <style>
   body {
-    background: url(assets/fridge.png) no-repeat;
+    background: url(assets/fridge.jpg) no-repeat;
   }
 
   .letter {
@@ -59,7 +59,14 @@
     $(document).ready(function () {
 
       var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "_"];
-
+      // create a four loop to iterate through the letters array
+      for (var i = 0; i < letters.length; i ++) {
+          var letterBtn = $("<button>"); // creates a variable named letterBtn
+          letterBtn.addClass("letter-button letter letter-button-color"); // adds 3 letter button classes
+          letterBtn.attr("data-letter", letters[i]); // gives each button the attribute data letter
+          letterBtn.text(letters[i]); // gives each "letterBtn" a text equal to "Letters[i]"
+          $("#buttons").append(letterBtn);
+      }
       
 
 
